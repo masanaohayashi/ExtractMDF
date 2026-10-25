@@ -75,6 +75,10 @@ LZM v2.91（HARPOON, 1990–1991）のマニュアルおよび展開ルーチン
 
 テストの参照実行には [run68x](https://github.com/kg68k/run68x) を使用しました。ユーザー提供の音楽ファイルやその解凍結果はリポジトリに含めていません。
 
+## ライセンス
+
+MITライセンスです。詳細は [LICENSE](LICENSE) を参照してください。原版LZMや参照先のソフトウェアは含まず、それらのライセンスを変更するものではありません。
+
 ---
 
 # English
@@ -151,3 +155,7 @@ The Swift implementation was developed by examining the manual and decompression
 - [Supported formats listed by the author of month & msch](https://bitarts.co.jp/software/tma.html)
 
 [run68x](https://github.com/kg68k/run68x) was used to run the original decoder for reference comparisons. User-provided music files and their extracted contents are not included in the repository.
+
+## License
+
+Licensed under the MIT License. See [LICENSE](LICENSE). The original LZM and referenced software are not included; this license does not change their respective licenses.
