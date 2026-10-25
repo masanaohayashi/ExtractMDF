@@ -17,6 +17,14 @@ macOS 13以降、Swift 5.9以降が必要です。このMacで作成したアプ
 
 Xcodeで `Package.swift` を開き、ExtractMDFを実行することもできます。
 
+配布用のUniversal（Apple Silicon / Intel）ビルドは次のコマンドで作成します。Developer ID証明書とキーチェーンの公証プロファイルが必要です。署名・公証・チケット添付とGatekeeper検証を行い、`build/release/<バージョン>/` にZIPとSHA-256チェックサムを出力します。
+
+```sh
+./scripts/release-macos.sh
+```
+
+既定の公証プロファイルは `Notalization2021` です。`SIGNING_IDENTITY` と `NOTARY_PROFILE` 環境変数で変更できます。
+
 ## 表示言語
 
 日本語・英語に対応しています。macOSの優先する言語に従って表示します。アプリ単位で変更する場合は、システム設定の「一般 → 言語と地域 → アプリケーション」でExtractMDFの言語を指定し、アプリを再起動してください。日本語以外の未対応言語では英語を使用します。
@@ -97,6 +105,14 @@ open build/ExtractMDF.app
 Requires macOS 13 or later and Swift 5.9 or later to build. The app built on this machine targets Apple Silicon and uses an ad hoc signature for local use. It is not Developer ID signed or notarized for distribution.
 
 You can also open `Package.swift` in Xcode and run the ExtractMDF target.
+
+To create a Universal release for Apple Silicon and Intel Macs, run the following command with a Developer ID certificate and a Keychain notarization profile available:
+
+```sh
+./scripts/release-macos.sh
+```
+
+The script signs, notarizes, staples, and checks the app with Gatekeeper. It writes the ZIP and SHA-256 checksum to `build/release/<version>/`. The default notarization profile is `Notalization2021`; override it with `NOTARY_PROFILE`, and use `SIGNING_IDENTITY` to select another certificate.
 
 ## Language
 
